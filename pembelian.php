@@ -22,7 +22,7 @@
                             <tr>
                                 <td> <?php echo $data['tanggal_penjualan']; ?></td>
                                 <td> <?php echo $data['nama_pelanggan']; ?></td>
-                                <td> <?php echo $data['total_harga']; ?></td>
+                                <td><?php echo number_format($data['total_harga'], 0, ',', '.'); ?></td>
                                 <td>
                                     <a href="?page=penjualan_detail&&id=<?php echo $data['id_penjualan']?>" class="btn btn-secondary">Detail</a>
                                     <a href="?page=penjualan_hapus&&id=<?php echo $data['id_penjualan']?>" class="btn btn-danger">Hapus</a>

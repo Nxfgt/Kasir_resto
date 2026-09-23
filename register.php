@@ -6,7 +6,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = md5($_POST['password']);
     $nama = $_POST['nama'];
-    $level = 'admin';
+    $level = 'petugas';
 
 $insert  = mysqli_query($koneksi, "INSERT INTO user(nama,username,password,level) VALUES('$nama','$username','$password','$level')");
     if ($insert) {

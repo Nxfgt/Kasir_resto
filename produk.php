@@ -15,22 +15,22 @@
                                 <th>Aksi</th>
                             </tr>
 
-                            <?php 
+                            <?php
                             $query = mysqli_query($koneksi, "SELECT*FROM produk");
-                            while($data = mysqli_fetch_array($query)){
+                            while ($data = mysqli_fetch_array($query)) {
                             ?>
-                            <tr>
-                                <td> <?php echo $data['nama_produk']; ?></td>
-                                <td> <?php echo $data['harga']; ?></td>
-                                <td> <?php echo $data['stok']; ?></td>
-                                <td>
-                                    <a href="?page=produk_ubah&&id=<?php echo $data['id_produk']?>" class="btn btn-secondary">Ubah</a>
-                                    <a href="?page=produk_hapus&&id=<?php echo $data['id_produk']?>" class="btn btn-danger">Hapus</a>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td> <?php echo $data['nama_produk']; ?></td>
+                                    <td><?php echo number_format($data['harga'], 0, ',', '.'); ?></td>
+                                    <td> <?php echo $data['stok']; ?></td>
+                                    <td>
+                                        <a href="?page=produk_ubah&&id=<?php echo $data['id_produk'] ?>" class="btn btn-secondary">Ubah</a>
+                                        <a href="?page=produk_hapus&&id=<?php echo $data['id_produk'] ?>" class="btn btn-danger">Hapus</a>
+                                    </td>
+                                </tr>
                             <?php
                             }
 
-                            
+
                             ?>
                         </table>
